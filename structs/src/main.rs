@@ -9,7 +9,7 @@ fn main() {
     let mut user1 = User {
         active: true,
         name: String::from("David"),
-        age: 80,
+        age: dbg!(80 - 50),
     };
 
     let user2 = User {
