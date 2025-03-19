@@ -1,18 +1,22 @@
 use std::io;
 
 fn main() {
-    let mut name = String::new();
-
-    println!("What's your name?");
-
-    io::stdin()
-        .read_line(&mut name)
-        .expect("Failed to parse variable");
-
+    let name = get_name();
     another_function(name);
 }
 
-// Simple function with parameters
+// function with return value
+fn get_name() -> String {
+    let mut name = String::new(); // statement
+
+    io::stdin()
+        .read_line(&mut name)
+        .expect("Failed to read line!");
+
+    name // expression
+}
+
+// simple function with parameters
 fn another_function(name: String) {
     println!("Hello, {name}!");
 }
